@@ -19,7 +19,9 @@ optional arguments:
   --verbose      verbose output
 ```
 
-Example
+The file xppm3db.py is a minimal version control system for xournal++ files (work in progress).
+
+## Example
 
 ```
 $ xppm3.py --root root.xopp --left a.xopp --right b.xopp --out merged.xopp --verbose
