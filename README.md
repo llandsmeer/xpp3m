@@ -1,7 +1,7 @@
 # xppm3
 
 Experimental xournal++ 3-way automatic merge tool.
-Currently merging only one page is supported.
+Merging within a single page be reasonable, but merging across pages is only possible if no pages are added/deleted in the common range (at the end is fine).
 This tool is mostly untested and it's usage will likely lead to data loss.
 
 ```

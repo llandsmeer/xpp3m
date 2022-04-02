@@ -145,7 +145,6 @@ def merge_page(root, a, b):
         c.layers.append(layer)
     return c
 
-
 def main():
     fn_root = 'root.xopp'
     fn_a = 'a.xopp'
@@ -175,9 +174,14 @@ def main():
         a.pprint()
         b.pprint()
 
-    page = merge_page(root.pages[0], a.pages[0], b.pages[0])
     c = XournalDocument()
-    c.pages.append(page)
+    npages_common = min(len(root.pages), len(a.pages), len(b.pages))
+    for i in range(npages_common):
+        page = merge_page(root.pages[i], a.pages[i], b.pages[i])
+        c.pages.append(page)
+    c.pages.extend(a.pages[npages_common:])
+    c.pages.extend(b.pages[npages_common:])
+
     if flag_verbose:
         c.pprint()
     c.title = _merge3atom(root.title, a.title, b.title)
